@@ -46,7 +46,7 @@
             BtnSave = new Button();
             TxtCategoriesDescription = new TextBox();
             TxtCategoriesName = new TextBox();
-            TxtPayModeId = new TextBox();
+            TxtCategoriesId = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -205,7 +205,7 @@
             tabPageCategoriesDetail.Controls.Add(BtnSave);
             tabPageCategoriesDetail.Controls.Add(TxtCategoriesDescription);
             tabPageCategoriesDetail.Controls.Add(TxtCategoriesName);
-            tabPageCategoriesDetail.Controls.Add(TxtPayModeId);
+            tabPageCategoriesDetail.Controls.Add(TxtCategoriesId);
             tabPageCategoriesDetail.Controls.Add(label5);
             tabPageCategoriesDetail.Controls.Add(label4);
             tabPageCategoriesDetail.Controls.Add(label3);
@@ -252,15 +252,15 @@
             TxtCategoriesName.Size = new Size(375, 27);
             TxtCategoriesName.TabIndex = 4;
             // 
-            // TxtPayModeId
+            // TxtCategoriesId
             // 
-            TxtPayModeId.Location = new Point(23, 36);
-            TxtPayModeId.Name = "TxtPayModeId";
-            TxtPayModeId.ReadOnly = true;
-            TxtPayModeId.Size = new Size(185, 27);
-            TxtPayModeId.TabIndex = 3;
-            TxtPayModeId.Text = "0";
-            TxtPayModeId.TextAlign = HorizontalAlignment.Right;
+            TxtCategoriesId.Location = new Point(23, 36);
+            TxtCategoriesId.Name = "TxtCategoriesId";
+            TxtCategoriesId.ReadOnly = true;
+            TxtCategoriesId.Size = new Size(185, 27);
+            TxtCategoriesId.TabIndex = 3;
+            TxtCategoriesId.Text = "0";
+            TxtCategoriesId.TextAlign = HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -333,7 +333,7 @@
         private Button BtnSave;
         private TextBox TxtCategoriesDescription;
         private TextBox TxtCategoriesName;
-        private TextBox TxtPayModeId;
+        private TextBox TxtCategoriesId;
         private Label label5;
         private Label label4;
         private Label label3;
