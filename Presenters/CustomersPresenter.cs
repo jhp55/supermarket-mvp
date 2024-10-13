@@ -2,6 +2,7 @@
 using Supermarket_mvp.Views;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,11 @@ namespace Supermarket_mvp.Presenters
             this.repository = repository;
 
 
-            this.view.SearchEvent += SearchPayMode;
-            this.view.AddNewEvent += AddNewPayMode;
-            this.view.EditEvent += LoadSelectPayModeToEdit;
-            this.view.DeleteEvent += DeleteSelectedPayMode;
-            this.view.SaveEvent += SavePayMode;
+            this.view.SearchEvent += SearchCustomers;
+            this.view.AddNewEvent += AddNewCustomers;
+            this.view.EditEvent += LoadSelectCustomersToEdit;
+            this.view.DeleteEvent += DeleteSelectedCustomers;
+            this.view.SaveEvent += SaveCustomers;
             this.view.CancelEvent += CancelAction;
 
             this.view.SetCustomersListBildingSource(customersBindingSource);
@@ -45,30 +46,102 @@ namespace Supermarket_mvp.Presenters
 
         private void CancelAction(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            CleanViewFields();
         }
 
-        private void SavePayMode(object? sender, EventArgs e)
+        private void SaveCustomers(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var customers = new CustomersModel();
+            customers.Id = Convert.ToInt32(view.CustomersId);
+            //customers.Document = view.CustomersDocument;
+            if (!string.IsNullOrEmpty(view.CustomersDocument))
+            {
+                customers.Document = Convert.ToInt32(view.CustomersDocument);
+            }
+            customers.FirstName = view.CustomersFirstName;
+            customers.LastName = view.CustomersLastName;
+            customers.Address = view.CustomersAddress;
+            customers.Birthday = view.CustomersBirthday;
+            customers.PhoneNumber = view.CustomersPhoneNumber;
+            customers.Email = view.CustomersEmail;
+
+            try
+            {
+                new Common.ModelDataValidation().Validate(customers);
+                if (view.IsEdit)
+                {
+                    repository.Edit(customers);
+                    view.Message = "Customers edited successfuly";
+                }
+                else
+                {
+                    repository.Add(customers);
+                    view.Message = "Customers added successfuly";
+                }
+                view.IsSuccessful = true;
+                loadAllCustomersList();
+                CleanViewFields();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = ex.Message;
+            }
         }
 
-        private void DeleteSelectedPayMode(object? sender, EventArgs e)
+        private void CleanViewFields()
         {
-            throw new NotImplementedException();
+            view.CustomersId = "0";
+            view.CustomersDocument = "";
+            view.CustomersFirstName = "";
+            view.CustomersLastName = "";
+            view.CustomersAddress = "";
+            view.CustomersBirthday = "";
+            view.CustomersPhoneNumber = "";
+            view.CustomersEmail = "";
         }
 
-        private void LoadSelectPayModeToEdit(object? sender, EventArgs e)
+        private void DeleteSelectedCustomers(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var customers = (CustomersModel)customersBindingSource.Current;
+
+                repository.Delete(customers.Id);
+                view.IsSuccessful = true;
+                view.Message = "Customers deleted successfully";
+                loadAllCustomersList();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = "An error Ocurred, could not delete Customers";
+            }
         }
 
-        private void AddNewPayMode(object? sender, EventArgs e)
+        private void LoadSelectCustomersToEdit(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var customers = (CustomersModel)customersBindingSource.Current;
+
+            view.CustomersId = customers.Id.ToString();
+            view.CustomersDocument = customers.Document.ToString();
+            view.CustomersFirstName = customers.FirstName;
+            view.CustomersLastName = customers.LastName;
+            view.CustomersAddress = customers.Address;
+            view.CustomersBirthday = customers.Birthday;
+            view.CustomersPhoneNumber = customers.PhoneNumber;
+            view.CustomersEmail = customers.Email;
+
+
+            view.IsEdit = true;
         }
 
-        private void SearchPayMode(object? sender, EventArgs e)
+        private void AddNewCustomers(object? sender, EventArgs e)
+        {
+            view.IsEdit = false;
+        }
+
+        private void SearchCustomers(object? sender, EventArgs e)
         {
             bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
             if (emptyValue == false)

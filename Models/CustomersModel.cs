@@ -14,8 +14,8 @@ namespace Supermarket_mvp.Models
         public int Id { get; set; }
 
         [DisplayName("Customers Document")]
-        [Required(ErrorMessage = ("Customers Document is required"))]
-        [StringLength(100, MinimumLength = 3, ErrorMessage = "Customers Document must be between 3 and 100 characters")]
+        [Required(ErrorMessage = "Customers Document is required")]
+        [Range(1, int.MaxValue, ErrorMessage = "Customers Document must be a positive number")]
         public int Document { get; set; }
 
         [DisplayName("Customers First_Name")]

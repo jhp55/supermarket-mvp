@@ -247,6 +247,7 @@
             // 
             // TxtCustomersBirthday
             // 
+            TxtCustomersBirthday.Format = DateTimePickerFormat.Short;
             TxtCustomersBirthday.Location = new Point(438, 95);
             TxtCustomersBirthday.Name = "TxtCustomersBirthday";
             TxtCustomersBirthday.Size = new Size(308, 27);

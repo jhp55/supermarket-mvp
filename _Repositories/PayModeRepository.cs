@@ -52,7 +52,7 @@ namespace Supermarket_mvp._Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"UPDATE PayMode
-                                      SET PAy_Mode_Name =@name,
+                                      SET Pay_Mode_Name =@name,
                                       Pay_Mode_Observation = @observation
                                       WHERE Pay_Mode_Id = @id";
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = payModeModel.Name;
