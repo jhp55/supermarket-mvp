@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.Views
 {
-    public partial class CategoriesView : Form
+    public partial class CategoriesView : Form, ICategoriesView
     {
         public CategoriesView()
         {
