@@ -111,5 +111,29 @@ namespace Supermarket_mvp.Views
         {
             DgCustomers.DataSource = customersList;
         }
+
+        private static CustomersView instance;
+
+        public static CustomersView GetInstance(Form parentContainer)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new CustomersView();
+                instance.MdiParent = parentContainer;
+
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Maximized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
     }
 }
