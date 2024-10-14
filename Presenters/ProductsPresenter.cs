@@ -44,27 +44,98 @@ namespace Supermarket_mvp.Presenters
 
         private void CancelAction(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            CleanViewFields();
         }
 
         private void SaveProducts(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var products = new ProductsModel();
+            products.Id = Convert.ToInt32(view.ProductsId);
+            products.Name = view.ProductsName;
+            //products.Price = view.ProductsPrice;
+            if (!string.IsNullOrEmpty(view.ProductsPrice))
+            {
+                products.Price = Convert.ToInt32(view.ProductsPrice);
+            }
+            //products.Stock = view.ProductsStock;
+            if (!string.IsNullOrEmpty(view.ProductsStock))
+            {
+                products.Stock = Convert.ToInt32(view.ProductsStock);
+            }
+            //products.Id_Categories = view.ProductsIdCategories;
+            if (!string.IsNullOrEmpty(view.ProductsIdCategories))
+            {
+                products.Id_Categories = Convert.ToInt32(view.ProductsIdCategories);
+            }
+
+
+            try
+            {
+                new Common.ModelDataValidation().Validate(products);
+                if (view.IsEdit)
+                {
+                    repository.Edit(products);
+                    view.Message = "Products edited successfuly";
+                }
+                else
+                {
+                    repository.Add(products);
+                    view.Message = "Products added successfuly";
+                }
+                view.IsSuccessful = true;
+                loadAllProductsList();
+                CleanViewFields();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = ex.Message;
+            }
+        }
+
+        private void CleanViewFields()
+        {
+            view.ProductsId = "0";
+            view.ProductsName = "";
+            view.ProductsPrice = "";
+            view.ProductsStock = "";
+            view.ProductsIdCategories = "";
         }
 
         private void DeleteSelectedProducts(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var products = (ProductsModel)productsBindingSource.Current;
+
+                repository.Delete(products.Id);
+                view.IsSuccessful = true;
+                view.Message = "Products deleted successfully";
+                loadAllProductsList();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = "An error Ocurred, could not delete products";
+            }
         }
 
         private void LoadSelectProductsToEdit(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var products = (ProductsModel)productsBindingSource.Current;
+
+            view.ProductsId = products.Id.ToString();
+            view.ProductsName = products.Name;
+            view.ProductsPrice = products.Price.ToString();
+            view.ProductsStock = products.Stock.ToString(); 
+            view.ProductsIdCategories= products.Id_Categories.ToString();
+
+            view.IsEdit = true;
         }
 
         private void AddNewProducts(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.IsEdit = false;
         }
 
         private void SearchProducts(object? sender, EventArgs e)

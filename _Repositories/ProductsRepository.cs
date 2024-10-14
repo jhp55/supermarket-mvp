@@ -17,17 +17,55 @@ namespace Supermarket_mvp._Repositories
         }
         public void Add(ProductsModel productsModel)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO Products VALUES (@Products_Name, @Products_Price, @Products_Stock, @Products_Category_Id)";
+                command.Parameters.Add("@Products_Name", SqlDbType.NVarChar).Value = productsModel.Name;
+                command.Parameters.Add("@Products_Price", SqlDbType.Int).Value = productsModel.Price;
+                command.Parameters.Add("@Products_Stock", SqlDbType.Int).Value = productsModel.Stock;
+                command.Parameters.Add("@Products_Category_Id", SqlDbType.Int).Value = productsModel.Id_Categories;
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "DELETE FROM Products WHERE Products_Id = @id";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command.ExecuteNonQuery();
+
+            }
         }
 
         public void Edit(ProductsModel productsModel)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = @"UPDATE Customers
+                                      SET Products_Name =@Products_Name,
+                                      Products_Price = @Products_Price,
+                                      Products_Stock = @Products_Stock,
+                                      Products_Category_Id = @Products_Category_Id
+                                      WHERE Products_Id = @Products_Id";
+                command.Parameters.Add("@Products_Name", SqlDbType.NVarChar).Value = productsModel.Name;
+                command.Parameters.Add("@Products_Price", SqlDbType.Int).Value = productsModel.Price;
+                command.Parameters.Add("@Products_Stock", SqlDbType.Int).Value = productsModel.Stock;
+                command.Parameters.Add("@Products_Category_Id", SqlDbType.Int).Value = productsModel.Id_Categories;
+                command.Parameters.Add("@Products_Id", SqlDbType.Int).Value = productsModel.Id;
+                command.ExecuteNonQuery();
+
+            }
         }
 
         public IEnumerable<ProductsModel> GetAll()
