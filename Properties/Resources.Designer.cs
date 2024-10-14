@@ -133,6 +133,16 @@ namespace Supermarket_mvp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Leonardo_Phoenix_A_vibrant_and_colorful_mural_depicting_a_larg_1 {
+            get {
+                object obj = ResourceManager.GetObject("Leonardo_Phoenix_A_vibrant_and_colorful_mural_depicting_a_larg_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap products {
             get {
                 object obj = ResourceManager.GetObject("products", resourceCulture);

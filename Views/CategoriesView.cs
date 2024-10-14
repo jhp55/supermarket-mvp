@@ -38,7 +38,8 @@ namespace Supermarket_mvp.Views
                 }
             };
 
-            BtnNew.Click += delegate {
+            BtnNew.Click += delegate
+            {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
 
                 tabControl1.TabPages.Remove(tabPageCategoriesList);
@@ -46,7 +47,8 @@ namespace Supermarket_mvp.Views
                 tabPageCategoriesDetail.Text = "Add New Categories";
             };
 
-            BtnEdit.Click += delegate {
+            BtnEdit.Click += delegate
+            {
                 EditEvent?.Invoke(this, EventArgs.Empty);
 
                 tabControl1.TabPages.Remove(tabPageCategoriesList);
@@ -93,7 +95,7 @@ namespace Supermarket_mvp.Views
 
         }
 
-        public string CategoriesId 
+        public string CategoriesId
         {
             get { return TxtCategoriesId.Text; }
             set { TxtCategoriesId.Text = value; }
@@ -103,7 +105,7 @@ namespace Supermarket_mvp.Views
             get { return TxtCategoriesName.Text; }
             set { TxtCategoriesName.Text = value; }
         }
-        public string CategoriesDescription 
+        public string CategoriesDescription
         {
             get { return TxtCategoriesDescription.Text; }
             set { TxtCategoriesDescription.Text = value; }

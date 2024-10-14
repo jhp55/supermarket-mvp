@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            BtnProducts = new Button();
             BtnCategories = new Button();
             BtnCustomers = new Button();
             BtnExit = new Button();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
-            BtnProducts = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -53,28 +53,42 @@
             panel1.Size = new Size(219, 573);
             panel1.TabIndex = 0;
             // 
+            // BtnProducts
+            // 
+            BtnProducts.BackColor = SystemColors.ButtonHighlight;
+            BtnProducts.BackgroundImage = Properties.Resources.products;
+            BtnProducts.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnProducts.Location = new Point(0, 388);
+            BtnProducts.Name = "BtnProducts";
+            BtnProducts.Size = new Size(219, 93);
+            BtnProducts.TabIndex = 5;
+            BtnProducts.UseVisualStyleBackColor = false;
+            // 
             // BtnCategories
             // 
+            BtnCategories.BackColor = SystemColors.ButtonHighlight;
             BtnCategories.BackgroundImage = Properties.Resources.categorias;
             BtnCategories.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnCategories.Location = new Point(3, 289);
+            BtnCategories.Location = new Point(0, 289);
             BtnCategories.Name = "BtnCategories";
-            BtnCategories.Size = new Size(213, 93);
+            BtnCategories.Size = new Size(219, 93);
             BtnCategories.TabIndex = 4;
-            BtnCategories.UseVisualStyleBackColor = true;
+            BtnCategories.UseVisualStyleBackColor = false;
             // 
             // BtnCustomers
             // 
+            BtnCustomers.BackColor = SystemColors.ButtonHighlight;
             BtnCustomers.BackgroundImage = Properties.Resources.providers;
             BtnCustomers.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnCustomers.Location = new Point(6, 190);
+            BtnCustomers.Location = new Point(0, 190);
             BtnCustomers.Name = "BtnCustomers";
-            BtnCustomers.Size = new Size(213, 93);
+            BtnCustomers.Size = new Size(219, 93);
             BtnCustomers.TabIndex = 3;
-            BtnCustomers.UseVisualStyleBackColor = true;
+            BtnCustomers.UseVisualStyleBackColor = false;
             // 
             // BtnExit
             // 
+            BtnExit.BackColor = Color.LightCoral;
             BtnExit.BackgroundImage = Properties.Resources.salida;
             BtnExit.BackgroundImageLayout = ImageLayout.Zoom;
             BtnExit.Dock = DockStyle.Bottom;
@@ -83,17 +97,18 @@
             BtnExit.Size = new Size(219, 93);
             BtnExit.TabIndex = 2;
             BtnExit.Text = "\r\n";
-            BtnExit.UseVisualStyleBackColor = true;
+            BtnExit.UseVisualStyleBackColor = false;
             // 
             // BtnPayMode
             // 
+            BtnPayMode.BackColor = SystemColors.ButtonHighlight;
             BtnPayMode.BackgroundImage = Properties.Resources.buy;
             BtnPayMode.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnPayMode.Location = new Point(3, 91);
+            BtnPayMode.Location = new Point(0, 91);
             BtnPayMode.Name = "BtnPayMode";
-            BtnPayMode.Size = new Size(213, 93);
+            BtnPayMode.Size = new Size(219, 93);
             BtnPayMode.TabIndex = 1;
-            BtnPayMode.UseVisualStyleBackColor = true;
+            BtnPayMode.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -106,20 +121,13 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // BtnProducts
-            // 
-            BtnProducts.BackgroundImage = Properties.Resources.products;
-            BtnProducts.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnProducts.Location = new Point(6, 388);
-            BtnProducts.Name = "BtnProducts";
-            BtnProducts.Size = new Size(213, 93);
-            BtnProducts.TabIndex = 5;
-            BtnProducts.UseVisualStyleBackColor = true;
-            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.InactiveCaption;
+            BackgroundImage = Properties.Resources.Leonardo_Phoenix_A_vibrant_and_colorful_mural_depicting_a_larg_1;
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(943, 573);
             Controls.Add(panel1);
             IsMdiContainer = true;

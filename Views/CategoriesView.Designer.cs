@@ -65,7 +65,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 116);
+            panel1.Size = new Size(1147, 116);
             panel1.TabIndex = 1;
             // 
             // pictureBox1
@@ -81,10 +81,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Bernard MT Condensed", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(129, 40);
+            label1.Font = new Font("Bernard MT Condensed", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(129, 9);
             label1.Name = "label1";
-            label1.Size = new Size(159, 40);
+            label1.Size = new Size(367, 95);
             label1.TabIndex = 0;
             label1.Text = "Categories";
             // 
@@ -96,7 +96,7 @@
             tabControl1.Location = new Point(0, 116);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(800, 334);
+            tabControl1.Size = new Size(1147, 447);
             tabControl1.TabIndex = 2;
             // 
             // tabPageCategoriesList
@@ -112,7 +112,7 @@
             tabPageCategoriesList.Location = new Point(4, 29);
             tabPageCategoriesList.Name = "tabPageCategoriesList";
             tabPageCategoriesList.Padding = new Padding(3);
-            tabPageCategoriesList.Size = new Size(792, 301);
+            tabPageCategoriesList.Size = new Size(1139, 414);
             tabPageCategoriesList.TabIndex = 0;
             tabPageCategoriesList.Text = "Categories List";
             tabPageCategoriesList.UseVisualStyleBackColor = true;
@@ -121,9 +121,9 @@
             // 
             BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnDelete.Image = Properties.Resources.delete;
-            BtnDelete.Location = new Point(636, 237);
+            BtnDelete.Location = new Point(963, 287);
             BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(148, 45);
+            BtnDelete.Size = new Size(168, 62);
             BtnDelete.TabIndex = 7;
             BtnDelete.UseVisualStyleBackColor = true;
             // 
@@ -131,9 +131,9 @@
             // 
             BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnClose.Image = Properties.Resources.cerrar;
-            BtnClose.Location = new Point(636, 186);
+            BtnClose.Location = new Point(963, 219);
             BtnClose.Name = "BtnClose";
-            BtnClose.Size = new Size(148, 45);
+            BtnClose.Size = new Size(168, 62);
             BtnClose.TabIndex = 6;
             BtnClose.UseVisualStyleBackColor = true;
             // 
@@ -141,9 +141,9 @@
             // 
             BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnEdit.Image = Properties.Resources.edit;
-            BtnEdit.Location = new Point(636, 135);
+            BtnEdit.Location = new Point(963, 151);
             BtnEdit.Name = "BtnEdit";
-            BtnEdit.Size = new Size(148, 45);
+            BtnEdit.Size = new Size(168, 62);
             BtnEdit.TabIndex = 5;
             BtnEdit.UseVisualStyleBackColor = true;
             // 
@@ -151,9 +151,9 @@
             // 
             BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnNew.Image = Properties.Resources._new;
-            BtnNew.Location = new Point(638, 83);
+            BtnNew.Location = new Point(963, 83);
             BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(148, 45);
+            BtnNew.Size = new Size(170, 62);
             BtnNew.TabIndex = 4;
             BtnNew.UseVisualStyleBackColor = true;
             // 
@@ -168,14 +168,14 @@
             DgCategories.Name = "DgCategories";
             DgCategories.ReadOnly = true;
             DgCategories.RowHeadersWidth = 51;
-            DgCategories.Size = new Size(592, 210);
+            DgCategories.Size = new Size(928, 323);
             DgCategories.TabIndex = 3;
             // 
             // BtnSearch
             // 
             BtnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnSearch.Image = Properties.Resources.search_small;
-            BtnSearch.Location = new Point(563, 29);
+            BtnSearch.Location = new Point(899, 29);
             BtnSearch.Name = "BtnSearch";
             BtnSearch.Size = new Size(58, 41);
             BtnSearch.TabIndex = 2;
@@ -187,7 +187,7 @@
             TxtSearch.Location = new Point(29, 43);
             TxtSearch.Name = "TxtSearch";
             TxtSearch.PlaceholderText = "Data to search";
-            TxtSearch.Size = new Size(521, 27);
+            TxtSearch.Size = new Size(851, 27);
             TxtSearch.TabIndex = 1;
             // 
             // label2
@@ -296,7 +296,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(255, 255, 192);
+            ClientSize = new Size(1147, 563);
             Controls.Add(tabControl1);
             Controls.Add(panel1);
             Name = "CategoriesView";

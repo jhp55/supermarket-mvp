@@ -42,6 +42,7 @@
             TxtSearch = new TextBox();
             label2 = new Label();
             tabPageProductsDetail = new TabPage();
+            TxtProductStock = new TextBox();
             TxtProductsIdCateg = new ComboBox();
             label7 = new Label();
             label6 = new Label();
@@ -53,7 +54,6 @@
             TxtProductsId = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            TxtProductStock = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
@@ -69,7 +69,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 116);
+            panel1.Size = new Size(1136, 116);
             panel1.TabIndex = 1;
             // 
             // pictureBox1
@@ -85,10 +85,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Bernard MT Condensed", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(129, 40);
+            label1.Font = new Font("Bernard MT Condensed", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(129, 9);
             label1.Name = "label1";
-            label1.Size = new Size(138, 40);
+            label1.Size = new Size(315, 95);
             label1.TabIndex = 0;
             label1.Text = "Products";
             // 
@@ -100,7 +100,7 @@
             tabControl1.Location = new Point(0, 116);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(800, 334);
+            tabControl1.Size = new Size(1136, 451);
             tabControl1.TabIndex = 2;
             // 
             // tabPageProductsList
@@ -116,7 +116,7 @@
             tabPageProductsList.Location = new Point(4, 29);
             tabPageProductsList.Name = "tabPageProductsList";
             tabPageProductsList.Padding = new Padding(3);
-            tabPageProductsList.Size = new Size(792, 301);
+            tabPageProductsList.Size = new Size(1128, 418);
             tabPageProductsList.TabIndex = 0;
             tabPageProductsList.Text = "Pay Products";
             tabPageProductsList.UseVisualStyleBackColor = true;
@@ -125,9 +125,9 @@
             // 
             BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnDelete.Image = Properties.Resources.delete;
-            BtnDelete.Location = new Point(636, 241);
+            BtnDelete.Location = new Point(937, 310);
             BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(148, 45);
+            BtnDelete.Size = new Size(183, 68);
             BtnDelete.TabIndex = 7;
             BtnDelete.UseVisualStyleBackColor = true;
             // 
@@ -135,9 +135,9 @@
             // 
             BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnClose.Image = Properties.Resources.cerrar;
-            BtnClose.Location = new Point(636, 190);
+            BtnClose.Location = new Point(937, 236);
             BtnClose.Name = "BtnClose";
-            BtnClose.Size = new Size(148, 45);
+            BtnClose.Size = new Size(183, 68);
             BtnClose.TabIndex = 6;
             BtnClose.UseVisualStyleBackColor = true;
             // 
@@ -145,9 +145,9 @@
             // 
             BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnEdit.Image = Properties.Resources.edit;
-            BtnEdit.Location = new Point(636, 139);
+            BtnEdit.Location = new Point(937, 162);
             BtnEdit.Name = "BtnEdit";
-            BtnEdit.Size = new Size(148, 45);
+            BtnEdit.Size = new Size(183, 68);
             BtnEdit.TabIndex = 5;
             BtnEdit.UseVisualStyleBackColor = true;
             // 
@@ -155,9 +155,9 @@
             // 
             BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnNew.Image = Properties.Resources._new;
-            BtnNew.Location = new Point(636, 88);
+            BtnNew.Location = new Point(937, 88);
             BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(148, 45);
+            BtnNew.Size = new Size(183, 68);
             BtnNew.TabIndex = 4;
             BtnNew.UseVisualStyleBackColor = true;
             // 
@@ -172,14 +172,14 @@
             DgProducts.Name = "DgProducts";
             DgProducts.ReadOnly = true;
             DgProducts.RowHeadersWidth = 51;
-            DgProducts.Size = new Size(592, 210);
+            DgProducts.Size = new Size(902, 327);
             DgProducts.TabIndex = 3;
             // 
             // BtnSearch
             // 
             BtnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnSearch.Image = Properties.Resources.search_small;
-            BtnSearch.Location = new Point(563, 29);
+            BtnSearch.Location = new Point(873, 29);
             BtnSearch.Name = "BtnSearch";
             BtnSearch.Size = new Size(58, 41);
             BtnSearch.TabIndex = 2;
@@ -191,7 +191,7 @@
             TxtSearch.Location = new Point(29, 43);
             TxtSearch.Name = "TxtSearch";
             TxtSearch.PlaceholderText = "Data to search";
-            TxtSearch.Size = new Size(515, 27);
+            TxtSearch.Size = new Size(832, 27);
             TxtSearch.TabIndex = 1;
             // 
             // label2
@@ -220,15 +220,23 @@
             tabPageProductsDetail.Location = new Point(4, 29);
             tabPageProductsDetail.Name = "tabPageProductsDetail";
             tabPageProductsDetail.Padding = new Padding(3);
-            tabPageProductsDetail.Size = new Size(792, 301);
+            tabPageProductsDetail.Size = new Size(1128, 418);
             tabPageProductsDetail.TabIndex = 1;
             tabPageProductsDetail.Text = "Products Detail";
             tabPageProductsDetail.UseVisualStyleBackColor = true;
             // 
+            // TxtProductStock
+            // 
+            TxtProductStock.Location = new Point(671, 36);
+            TxtProductStock.Name = "TxtProductStock";
+            TxtProductStock.PlaceholderText = "Products Stock";
+            TxtProductStock.Size = new Size(367, 27);
+            TxtProductStock.TabIndex = 14;
+            // 
             // TxtProductsIdCateg
             // 
             TxtProductsIdCateg.FormattingEnabled = true;
-            TxtProductsIdCateg.Location = new Point(417, 104);
+            TxtProductsIdCateg.Location = new Point(671, 101);
             TxtProductsIdCateg.Name = "TxtProductsIdCateg";
             TxtProductsIdCateg.Size = new Size(367, 28);
             TxtProductsIdCateg.TabIndex = 13;
@@ -237,7 +245,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(417, 81);
+            label7.Location = new Point(671, 81);
             label7.Name = "label7";
             label7.Size = new Size(149, 20);
             label7.TabIndex = 12;
@@ -247,7 +255,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(417, 16);
+            label6.Location = new Point(671, 13);
             label6.Name = "label6";
             label6.Size = new Size(113, 20);
             label6.TabIndex = 10;
@@ -255,7 +263,7 @@
             // 
             // TxtProductsPrice
             // 
-            TxtProductsPrice.Location = new Point(26, 175);
+            TxtProductsPrice.Location = new Point(98, 178);
             TxtProductsPrice.Name = "TxtProductsPrice";
             TxtProductsPrice.PlaceholderText = "Products Price";
             TxtProductsPrice.Size = new Size(375, 27);
@@ -265,7 +273,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(29, 155);
+            label5.Location = new Point(98, 155);
             label5.Name = "label5";
             label5.Size = new Size(109, 20);
             label5.TabIndex = 8;
@@ -274,7 +282,7 @@
             // BtnCancel
             // 
             BtnCancel.Image = Properties.Resources.cancel;
-            BtnCancel.Location = new Point(414, 240);
+            BtnCancel.Location = new Point(567, 240);
             BtnCancel.Name = "BtnCancel";
             BtnCancel.Size = new Size(101, 53);
             BtnCancel.TabIndex = 7;
@@ -283,7 +291,7 @@
             // BtnSave
             // 
             BtnSave.Image = Properties.Resources.save;
-            BtnSave.Location = new Point(297, 240);
+            BtnSave.Location = new Point(429, 240);
             BtnSave.Name = "BtnSave";
             BtnSave.Size = new Size(101, 53);
             BtnSave.TabIndex = 6;
@@ -291,7 +299,7 @@
             // 
             // TxtProductsName
             // 
-            TxtProductsName.Location = new Point(23, 101);
+            TxtProductsName.Location = new Point(98, 101);
             TxtProductsName.Name = "TxtProductsName";
             TxtProductsName.PlaceholderText = "Products Name";
             TxtProductsName.Size = new Size(375, 27);
@@ -299,7 +307,7 @@
             // 
             // TxtProductsId
             // 
-            TxtProductsId.Location = new Point(23, 36);
+            TxtProductsId.Location = new Point(98, 36);
             TxtProductsId.Name = "TxtProductsId";
             TxtProductsId.ReadOnly = true;
             TxtProductsId.Size = new Size(185, 27);
@@ -311,7 +319,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(26, 81);
+            label4.Location = new Point(98, 81);
             label4.Name = "label4";
             label4.Size = new Size(117, 20);
             label4.TabIndex = 1;
@@ -321,25 +329,18 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(26, 16);
+            label3.Location = new Point(98, 13);
             label3.Name = "label3";
             label3.Size = new Size(89, 20);
             label3.TabIndex = 0;
             label3.Text = "Products Id";
             // 
-            // TxtProductStock
-            // 
-            TxtProductStock.Location = new Point(417, 39);
-            TxtProductStock.Name = "TxtProductStock";
-            TxtProductStock.PlaceholderText = "Products Stock";
-            TxtProductStock.Size = new Size(367, 27);
-            TxtProductStock.TabIndex = 14;
-            // 
             // ProductsView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(255, 224, 192);
+            ClientSize = new Size(1136, 567);
             Controls.Add(tabControl1);
             Controls.Add(panel1);
             Name = "ProductsView";

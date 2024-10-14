@@ -38,7 +38,8 @@ namespace Supermarket_mvp.Views
                 }
             };
 
-            BtnNew.Click += delegate {
+            BtnNew.Click += delegate
+            {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
 
                 tabControl1.TabPages.Remove(tabPageCustomersList);
@@ -46,7 +47,8 @@ namespace Supermarket_mvp.Views
                 tabPageCustomersDetail.Text = "Add New Customers";
             };
 
-            BtnEdit.Click += delegate {
+            BtnEdit.Click += delegate
+            {
                 EditEvent?.Invoke(this, EventArgs.Empty);
 
                 tabControl1.TabPages.Remove(tabPageCustomersList);
@@ -90,42 +92,42 @@ namespace Supermarket_mvp.Views
             };
         }
 
-        public string CustomersId 
+        public string CustomersId
         {
             get { return TxtCustomersId.Text; }
             set { TxtCustomersId.Text = value; }
         }
-        public string CustomersDocument 
+        public string CustomersDocument
         {
             get { return TxtCustomersDocument.Text; }
             set { TxtCustomersDocument.Text = value; }
         }
-        public string CustomersFirstName 
+        public string CustomersFirstName
         {
             get { return TxtCustomersFirstName.Text; }
             set { TxtCustomersFirstName.Text = value; }
         }
-        public string CustomersLastName 
+        public string CustomersLastName
         {
             get { return TxtCustomersLastName.Text; }
             set { TxtCustomersLastName.Text = value; }
         }
-        public string CustomersAddress 
+        public string CustomersAddress
         {
             get { return TxtCustomersAddress.Text; }
             set { TxtCustomersAddress.Text = value; }
         }
-        public string CustomersBirthday 
+        public string CustomersBirthday
         {
             get { return TxtCustomersBirthday.Text; }
             set { TxtCustomersBirthday.Text = value; }
         }
-        public string CustomersPhoneNumber 
+        public string CustomersPhoneNumber
         {
             get { return TxtCustomersPhoneNumber.Text; }
             set { TxtCustomersPhoneNumber.Text = value; }
         }
-        public string CustomersEmail 
+        public string CustomersEmail
         {
             get { return TxtCustomersEmail.Text; }
             set { TxtCustomersEmail.Text = value; }
