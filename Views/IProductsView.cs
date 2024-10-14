@@ -29,4 +29,4 @@ namespace Supermarket_mvp.Views
         void Show();
     }
 }
-}
+

@@ -22,6 +22,8 @@ namespace Supermarket_mvp.Views
 
             BtnCategories.Click += delegate { ShowCategoriesView?.Invoke(this, EventArgs.Empty); };
 
+            BtnProducts.Click += delegate { ShowProductView?.Invoke(this, EventArgs.Empty); };
+
             BtnExit.Click += delegate { this.Close(); };
         }
 
