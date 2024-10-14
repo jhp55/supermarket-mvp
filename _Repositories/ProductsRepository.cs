@@ -52,7 +52,7 @@ namespace Supermarket_mvp._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"UPDATE Customers
+                command.CommandText = @"UPDATE Products
                                       SET Products_Name =@Products_Name,
                                       Products_Price = @Products_Price,
                                       Products_Stock = @Products_Stock,
