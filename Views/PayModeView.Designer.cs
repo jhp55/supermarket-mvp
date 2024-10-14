@@ -70,7 +70,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.products;
+            pictureBox1.Image = Properties.Resources.buy;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(120, 108);
